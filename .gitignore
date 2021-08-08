@@ -1,0 +1,12 @@
+# for pipenv
+
+.venv
+
+# for django
+
+db.sqlite3
+
+*.pyc
+
+# for http test
+sample.http

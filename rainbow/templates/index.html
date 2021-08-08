@@ -1,0 +1,1145 @@
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="bookmark" type="image/x-icon" href="/static/img/favicon.ico"/>
+    <link rel="shortcut icon" href="/static/img/favicon.ico">
+    <title>首页 - 杜赛的博客</title>
+
+
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/css/all.min.css" rel="stylesheet">
+    <link href="../static/css/hover.min.css" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="../static/css/monokai.css">
+    <link rel="stylesheet" href="../static/css/personal_style-v5.css">
+    <link rel="stylesheet" href="../static/css/icons.css">
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="../static/js/95840b2e9a0b417d918f670e8835a8d5.js"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'UA-123957004-1');
+    </script>
+
+
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?f1ad3aa5133d41495a918468cab623d4";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+</head>
+<body>
+<script src="../static/js/vue@2.6.js"></script>
+<script src="../static/js/jquery.min.js"></script>
+<script src="../static/js/popper.min.js"></script>
+<script src="../static/js/bootstrap.min.js"></script>
+
+
+<!-- Author: 鹦鹉 -->
+<!-- https://ezbox.idv.tw/131/back-to-top-button-without-images -->
+<button type="button" id="BackTop" class="toTop-arrow hvr-bob" style="z-index: 10;"></button>
+<script>
+    $(function () {
+        $('#BackTop').click(function () {
+            $('html,body').animate({scrollTop: 0}, 333);
+        });
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 300) {
+                $('#BackTop').fadeIn(222);
+            } else {
+                $('#BackTop').stop().fadeOut(222);
+            }
+        }).scroll();
+    });
+</script>
+
+<style>
+    /* 56px */
+    .toTop-arrow {
+        width: 2.5rem;
+        height: 2.5rem;
+        padding: 0;
+        margin: 0;
+        border: 0;
+        border-radius: 33%;
+        opacity: 0.7;
+        background: #686868;
+        cursor: pointer;
+        position: fixed;
+        right: 1.5rem;
+        bottom: 1.5rem;
+        display: none;
+    }
+
+    .toTop-arrow::before, .toTop-arrow::after {
+        width:20px;
+        height: 5px;
+        border-radius: 3px;
+        background: #e8e8e8;
+        position: absolute;
+        content: "";
+    }
+
+    .toTop-arrow::before {
+        transform: rotate(-45deg) translate(0, -50%);
+        left: 0.4rem;
+    }
+
+    .toTop-arrow::after {
+        transform: rotate(45deg) translate(0, -50%);
+        right: 0.4rem;
+    }
+
+    .toTop-arrow:focus {
+        outline: none;
+    }
+</style>
+
+
+    
+        
+
+
+
+
+
+
+
+<div class="container" id="app_header">
+
+    <div class="row justify-content-center">
+        <div>
+            <br>
+            <br>
+            <br>
+            <img
+                    src="../static/picture/pylogo.png"
+                    alt=""
+                    class="headline-icon"
+            >
+        </div>
+    </div>
+
+    <div class="row">
+        <h2 class="font-headline mt-2 col-12 text-h-center" v-bind:style="{ fontSize: headlineFontSize + 'px' }">Yet
+            Another Django
+            Blog</h2>
+    </div>
+
+    <div class="row">
+        <h5 class="font-subheadline col-12 text-h-center" v-bind:style="{ fontSize: subheadlineFontSize + 'px' }">Learn
+            advanced Django
+            topics</h5>
+        <p class="font-subheadline col-12 text-h-center">🐞🔍🏃🏻‍♂️💦💨💨💨</p>
+    </div>
+
+
+    <br class="mt-4">
+
+
+    <div class="row justify-content-between">
+        <ul class="nav">
+            <li class="nav-item ">
+                <a class="nav-link font-navitem" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link font-navitem" href="/topic/">Topics</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link font-navitem" href="/projects/">Projects</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link font-navitem" href="/link/">Links</a>
+            </li>
+
+        </ul>
+        <div
+                class="row align-items-center d-none d-sm-block"
+                style="line-height: 40px; padding-right: 20px;"
+        >
+
+            <ul class="nav">
+                <li class="nav-item">
+                    <a
+                            href="javascript:void(0);"
+                            data-toggle="modal"
+                            data-target="#QR-footer"
+                    >
+                        <i class="fab fa-qq nav-icon"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="https://github.com/stacklens" target="_blank">
+                        <i class="fab fa-github nav-icon"></i>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a
+                            href="javascript:void(0);"
+                            data-toggle="modal"
+                            data-target="#QR-footer"
+                    >
+                        <i class="fab fa-weixin nav-icon"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/all/rss/" target="_blank">
+                        <i class="fas fa-rss nav-icon"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+    <hr
+            
+    >
+
+</div>
+
+
+<script>
+
+
+    let app_header = new Vue({
+        el: '#app_header',
+        data: {
+            isWindowSmall: document.body.clientWidth < 580,
+            windowSizeSplitConst: 580,
+            smallDeviceFontSize: 20,
+            largeDeviceFontSize: 30
+        },
+
+
+        computed: {
+            headlineFontSize: function () {
+                return this.isWindowSmall ? this.smallDeviceFontSize : this.largeDeviceFontSize;
+            },
+            subheadlineFontSize: function () {
+                return (this.isWindowSmall ? this.smallDeviceFontSize : this.largeDeviceFontSize) * 0.6;
+            }
+        },
+
+        created() {
+            window.addEventListener("resize", this.resizeEventHandler);
+        },
+
+        destroyed() {
+            window.removeEventListener("resize", this.resizeEventHandler);
+        },
+
+        methods: {
+            resizeEventHandler(e) {
+                this.isWindowSmall = document.body.clientWidth < this.windowSizeSplitConst
+            }
+        }
+    })
+</script>
+    
+
+
+
+
+
+<div id="wrapper">
+    
+    <div>
+        <div class="container" id="app_article_list">
+            
+                <div class="row">
+                    <a
+                            href="/article/155/"
+                            class="color-black text-large font-title padding-lr-20"
+                            v-bind:style="{ fontSize: fontSize + 'px' }"
+                    >
+                        Django搭建网络相册：MTV模式
+                    </a>
+
+                </div>
+                <div class="row">
+                    <p class="font-size-xs padding-lr-20">
+                        2021/08/06 created,
+                        43 views,
+                        0 likes
+                    </p>
+                </div>
+
+                <hr class="d-sm-none" style="border-top: 2px dashed #f2f2f2;">
+
+
+            
+                <div class="row">
+                    <a
+                            href="/article/154/"
+                            class="color-black text-large font-title padding-lr-20"
+                            v-bind:style="{ fontSize: fontSize + 'px' }"
+                    >
+                        Django搭建网络相册：数据存储
+                    </a>
+
+                </div>
+                <div class="row">
+                    <p class="font-size-xs padding-lr-20">
+                        2021/08/05 created,
+                        43 views,
+                        1 likes
+                    </p>
+                </div>
+
+                <hr class="d-sm-none" style="border-top: 2px dashed #f2f2f2;">
+
+
+            
+                <div class="row">
+                    <a
+                            href="/article/153/"
+                            class="color-black text-large font-title padding-lr-20"
+                            v-bind:style="{ fontSize: fontSize + 'px' }"
+                    >
+                        Django搭建网络相册：你好世界
+                    </a>
+
+                </div>
+                <div class="row">
+                    <p class="font-size-xs padding-lr-20">
+                        2021/08/04 created,
+                        53 views,
+                        1 likes
+                    </p>
+                </div>
+
+                <hr class="d-sm-none" style="border-top: 2px dashed #f2f2f2;">
+
+
+            
+                <div class="row">
+                    <a
+                            href="/article/152/"
+                            class="color-black text-large font-title padding-lr-20"
+                            v-bind:style="{ fontSize: fontSize + 'px' }"
+                    >
+                        Django搭建网络相册：搭建开发环境
+                    </a>
+
+                </div>
+                <div class="row">
+                    <p class="font-size-xs padding-lr-20">
+                        2021/08/03 created,
+                        59 views,
+                        1 likes
+                    </p>
+                </div>
+
+                <hr class="d-sm-none" style="border-top: 2px dashed #f2f2f2;">
+
+
+            
+                <div class="row">
+                    <a
+                            href="/article/151/"
+                            class="color-black text-large font-title padding-lr-20"
+                            v-bind:style="{ fontSize: fontSize + 'px' }"
+                    >
+                        Django搭建网络相册：前言
+                    </a>
+
+                </div>
+                <div class="row">
+                    <p class="font-size-xs padding-lr-20">
+                        2021/08/02 created,
+                        166 views,
+                        0 likes
+                    </p>
+                </div>
+
+                <hr class="d-sm-none" style="border-top: 2px dashed #f2f2f2;">
+
+
+            
+                <div class="row">
+                    <a
+                            href="/article/150/"
+                            class="color-black text-large font-title padding-lr-20"
+                            v-bind:style="{ fontSize: fontSize + 'px' }"
+                    >
+                        Python魔法方法漫游指南：可调用和槽
+                    </a>
+
+                </div>
+                <div class="row">
+                    <p class="font-size-xs padding-lr-20">
+                        2021/07/19 created,
+                        169 views,
+                        3 likes
+                    </p>
+                </div>
+
+                <hr class="d-sm-none" style="border-top: 2px dashed #f2f2f2;">
+
+
+            
+                <div class="row">
+                    <a
+                            href="/article/149/"
+                            class="color-black text-large font-title padding-lr-20"
+                            v-bind:style="{ fontSize: fontSize + 'px' }"
+                    >
+                        Python魔法方法漫游指南：描述符
+                    </a>
+
+                </div>
+                <div class="row">
+                    <p class="font-size-xs padding-lr-20">
+                        2021/07/17 created,
+                        133 views,
+                        1 likes
+                    </p>
+                </div>
+
+                <hr class="d-sm-none" style="border-top: 2px dashed #f2f2f2;">
+
+
+            
+                <div class="row">
+                    <a
+                            href="/article/148/"
+                            class="color-black text-large font-title padding-lr-20"
+                            v-bind:style="{ fontSize: fontSize + 'px' }"
+                    >
+                        Python魔法方法漫游指南：容器
+                    </a>
+
+                </div>
+                <div class="row">
+                    <p class="font-size-xs padding-lr-20">
+                        2021/07/16 created,
+                        163 views,
+                        0 likes
+                    </p>
+                </div>
+
+                <hr class="d-sm-none" style="border-top: 2px dashed #f2f2f2;">
+
+
+            
+                <div class="row">
+                    <a
+                            href="/article/147/"
+                            class="color-black text-large font-title padding-lr-20"
+                            v-bind:style="{ fontSize: fontSize + 'px' }"
+                    >
+                        Python魔法方法漫游指南：属性访问
+                    </a>
+
+                </div>
+                <div class="row">
+                    <p class="font-size-xs padding-lr-20">
+                        2021/07/15 created,
+                        136 views,
+                        1 likes
+                    </p>
+                </div>
+
+                <hr class="d-sm-none" style="border-top: 2px dashed #f2f2f2;">
+
+
+            
+                <div class="row">
+                    <a
+                            href="/article/146/"
+                            class="color-black text-large font-title padding-lr-20"
+                            v-bind:style="{ fontSize: fontSize + 'px' }"
+                    >
+                        Python魔法方法漫游指南：类的表示
+                    </a>
+
+                </div>
+                <div class="row">
+                    <p class="font-size-xs padding-lr-20">
+                        2021/07/14 created,
+                        161 views,
+                        2 likes
+                    </p>
+                </div>
+
+                <hr class="d-sm-none" style="border-top: 2px dashed #f2f2f2;">
+
+
+            
+                <div class="row">
+                    <a
+                            href="/article/145/"
+                            class="color-black text-large font-title padding-lr-20"
+                            v-bind:style="{ fontSize: fontSize + 'px' }"
+                    >
+                        Python魔法方法漫游指南：构造与析构
+                    </a>
+
+                </div>
+                <div class="row">
+                    <p class="font-size-xs padding-lr-20">
+                        2021/07/13 created,
+                        159 views,
+                        1 likes
+                    </p>
+                </div>
+
+                <hr class="d-sm-none" style="border-top: 2px dashed #f2f2f2;">
+
+
+            
+                <div class="row">
+                    <a
+                            href="/article/144/"
+                            class="color-black text-large font-title padding-lr-20"
+                            v-bind:style="{ fontSize: fontSize + 'px' }"
+                    >
+                        Python魔法方法漫游指南：运算符
+                    </a>
+
+                </div>
+                <div class="row">
+                    <p class="font-size-xs padding-lr-20">
+                        2021/07/12 created,
+                        185 views,
+                        1 likes
+                    </p>
+                </div>
+
+                <hr class="d-sm-none" style="border-top: 2px dashed #f2f2f2;">
+
+
+            
+                <div class="row">
+                    <a
+                            href="/article/143/"
+                            class="color-black text-large font-title padding-lr-20"
+                            v-bind:style="{ fontSize: fontSize + 'px' }"
+                    >
+                        Python魔法方法漫游指南：前言
+                    </a>
+
+                </div>
+                <div class="row">
+                    <p class="font-size-xs padding-lr-20">
+                        2021/07/09 created,
+                        314 views,
+                        1 likes
+                    </p>
+                </div>
+
+                <hr class="d-sm-none" style="border-top: 2px dashed #f2f2f2;">
+
+
+            
+                <div class="row">
+                    <a
+                            href="/article/142/"
+                            class="color-black text-large font-title padding-lr-20"
+                            v-bind:style="{ fontSize: fontSize + 'px' }"
+                    >
+                        Python黑魔法：元类与元编程
+                    </a>
+
+                </div>
+                <div class="row">
+                    <p class="font-size-xs padding-lr-20">
+                        2021/06/24 created,
+                        407 views,
+                        3 likes
+                    </p>
+                </div>
+
+                <hr class="d-sm-none" style="border-top: 2px dashed #f2f2f2;">
+
+
+            
+                <div class="row">
+                    <a
+                            href="/article/141/"
+                            class="color-black text-large font-title padding-lr-20"
+                            v-bind:style="{ fontSize: fontSize + 'px' }"
+                    >
+                        Python生成器：不得不学的强力特性
+                    </a>
+
+                </div>
+                <div class="row">
+                    <p class="font-size-xs padding-lr-20">
+                        2021/06/21 created,
+                        314 views,
+                        2 likes
+                    </p>
+                </div>
+
+                <hr class="d-sm-none" style="border-top: 2px dashed #f2f2f2;">
+
+
+            
+                <div class="row">
+                    <a
+                            href="/article/140/"
+                            class="color-black text-large font-title padding-lr-20"
+                            v-bind:style="{ fontSize: fontSize + 'px' }"
+                    >
+                        Python闭包概念入门
+                    </a>
+
+                </div>
+                <div class="row">
+                    <p class="font-size-xs padding-lr-20">
+                        2021/06/18 created,
+                        255 views,
+                        0 likes
+                    </p>
+                </div>
+
+                <hr class="d-sm-none" style="border-top: 2px dashed #f2f2f2;">
+
+
+            
+                <div class="row">
+                    <a
+                            href="/article/139/"
+                            class="color-black text-large font-title padding-lr-20"
+                            v-bind:style="{ fontSize: fontSize + 'px' }"
+                    >
+                        Python装饰器入门：从理解到应用
+                    </a>
+
+                </div>
+                <div class="row">
+                    <p class="font-size-xs padding-lr-20">
+                        2021/06/11 created,
+                        527 views,
+                        6 likes
+                    </p>
+                </div>
+
+                <hr class="d-sm-none" style="border-top: 2px dashed #f2f2f2;">
+
+
+            
+                <div class="row">
+                    <a
+                            href="/article/138/"
+                            class="color-black text-large font-title padding-lr-20"
+                            v-bind:style="{ fontSize: fontSize + 'px' }"
+                    >
+                        Django代码解耦：信号的运用
+                    </a>
+
+                </div>
+                <div class="row">
+                    <p class="font-size-xs padding-lr-20">
+                        2021/04/29 created,
+                        809 views,
+                        5 likes
+                    </p>
+                </div>
+
+                <hr class="d-sm-none" style="border-top: 2px dashed #f2f2f2;">
+
+
+            
+                <div class="row">
+                    <a
+                            href="/article/137/"
+                            class="color-black text-large font-title padding-lr-20"
+                            v-bind:style="{ fontSize: fontSize + 'px' }"
+                    >
+                        轮子推荐：一款不需要虚拟环境的Py包管理器
+                    </a>
+
+                </div>
+                <div class="row">
+                    <p class="font-size-xs padding-lr-20">
+                        2021/04/13 created,
+                        787 views,
+                        7 likes
+                    </p>
+                </div>
+
+                <hr class="d-sm-none" style="border-top: 2px dashed #f2f2f2;">
+
+
+            
+                <div class="row">
+                    <a
+                            href="/article/136/"
+                            class="color-black text-large font-title padding-lr-20"
+                            v-bind:style="{ fontSize: fontSize + 'px' }"
+                    >
+                        Django-Vue搭建个人博客：结语
+                    </a>
+
+                </div>
+                <div class="row">
+                    <p class="font-size-xs padding-lr-20">
+                        2021/04/03 created,
+                        1395 views,
+                        21 likes
+                    </p>
+                </div>
+
+                <hr class="d-sm-none" style="border-top: 2px dashed #f2f2f2;">
+
+
+            
+                <div class="row">
+                    <a
+                            href="/article/135/"
+                            class="color-black text-large font-title padding-lr-20"
+                            v-bind:style="{ fontSize: fontSize + 'px' }"
+                    >
+                        Django-Vue搭建个人博客：项目部署
+                    </a>
+
+                </div>
+                <div class="row">
+                    <p class="font-size-xs padding-lr-20">
+                        2021/04/02 created,
+                        1803 views,
+                        13 likes
+                    </p>
+                </div>
+
+                <hr class="d-sm-none" style="border-top: 2px dashed #f2f2f2;">
+
+
+            
+                <div class="row">
+                    <a
+                            href="/article/134/"
+                            class="color-black text-large font-title padding-lr-20"
+                            v-bind:style="{ fontSize: fontSize + 'px' }"
+                    >
+                        Django-Vue搭建个人博客：组合式API
+                    </a>
+
+                </div>
+                <div class="row">
+                    <p class="font-size-xs padding-lr-20">
+                        2021/04/01 created,
+                        1201 views,
+                        6 likes
+                    </p>
+                </div>
+
+                <hr class="d-sm-none" style="border-top: 2px dashed #f2f2f2;">
+
+
+            
+                <div class="row">
+                    <a
+                            href="/article/133/"
+                            class="color-black text-large font-title padding-lr-20"
+                            v-bind:style="{ fontSize: fontSize + 'px' }"
+                    >
+                        Django-Vue搭建个人博客：发布评论
+                    </a>
+
+                </div>
+                <div class="row">
+                    <p class="font-size-xs padding-lr-20">
+                        2021/03/31 created,
+                        838 views,
+                        7 likes
+                    </p>
+                </div>
+
+                <hr class="d-sm-none" style="border-top: 2px dashed #f2f2f2;">
+
+
+            
+                <div class="row">
+                    <a
+                            href="/article/132/"
+                            class="color-black text-large font-title padding-lr-20"
+                            v-bind:style="{ fontSize: fontSize + 'px' }"
+                    >
+                        Django-Vue搭建个人博客：标题图的提交
+                    </a>
+
+                </div>
+                <div class="row">
+                    <p class="font-size-xs padding-lr-20">
+                        2021/03/30 created,
+                        1005 views,
+                        5 likes
+                    </p>
+                </div>
+
+                <hr class="d-sm-none" style="border-top: 2px dashed #f2f2f2;">
+
+
+            
+                <div class="row">
+                    <a
+                            href="/article/131/"
+                            class="color-black text-large font-title padding-lr-20"
+                            v-bind:style="{ fontSize: fontSize + 'px' }"
+                    >
+                        Django-Vue搭建个人博客：文章更新与删除
+                    </a>
+
+                </div>
+                <div class="row">
+                    <p class="font-size-xs padding-lr-20">
+                        2021/03/29 created,
+                        950 views,
+                        7 likes
+                    </p>
+                </div>
+
+                <hr class="d-sm-none" style="border-top: 2px dashed #f2f2f2;">
+
+
+            
+                <div class="row">
+                    <a
+                            href="/article/130/"
+                            class="color-black text-large font-title padding-lr-20"
+                            v-bind:style="{ fontSize: fontSize + 'px' }"
+                    >
+                        Django-Vue搭建个人博客：发表文章
+                    </a>
+
+                </div>
+                <div class="row">
+                    <p class="font-size-xs padding-lr-20">
+                        2021/03/28 created,
+                        1606 views,
+                        8 likes
+                    </p>
+                </div>
+
+                <hr class="d-sm-none" style="border-top: 2px dashed #f2f2f2;">
+
+
+            
+                <div class="row">
+                    <a
+                            href="/article/129/"
+                            class="color-black text-large font-title padding-lr-20"
+                            v-bind:style="{ fontSize: fontSize + 'px' }"
+                    >
+                        Django-Vue搭建个人博客：资料删除与组件通信
+                    </a>
+
+                </div>
+                <div class="row">
+                    <p class="font-size-xs padding-lr-20">
+                        2021/03/27 created,
+                        1303 views,
+                        9 likes
+                    </p>
+                </div>
+
+                <hr class="d-sm-none" style="border-top: 2px dashed #f2f2f2;">
+
+
+            
+                <div class="row">
+                    <a
+                            href="/article/128/"
+                            class="color-black text-large font-title padding-lr-20"
+                            v-bind:style="{ fontSize: fontSize + 'px' }"
+                    >
+                        Django-Vue搭建个人博客：资料更新与异步
+                    </a>
+
+                </div>
+                <div class="row">
+                    <p class="font-size-xs padding-lr-20">
+                        2021/03/26 created,
+                        1206 views,
+                        6 likes
+                    </p>
+                </div>
+
+                <hr class="d-sm-none" style="border-top: 2px dashed #f2f2f2;">
+
+
+            
+                <div class="row">
+                    <a
+                            href="/article/127/"
+                            class="color-black text-large font-title padding-lr-20"
+                            v-bind:style="{ fontSize: fontSize + 'px' }"
+                    >
+                        Django-Vue搭建个人博客：用户登录
+                    </a>
+
+                </div>
+                <div class="row">
+                    <p class="font-size-xs padding-lr-20">
+                        2021/03/25 created,
+                        1556 views,
+                        12 likes
+                    </p>
+                </div>
+
+                <hr class="d-sm-none" style="border-top: 2px dashed #f2f2f2;">
+
+
+            
+                <div class="row">
+                    <a
+                            href="/article/126/"
+                            class="color-black text-large font-title padding-lr-20"
+                            v-bind:style="{ fontSize: fontSize + 'px' }"
+                    >
+                        Django-Vue搭建个人博客：用户注册
+                    </a>
+
+                </div>
+                <div class="row">
+                    <p class="font-size-xs padding-lr-20">
+                        2021/03/24 created,
+                        1407 views,
+                        13 likes
+                    </p>
+                </div>
+
+                <hr class="d-sm-none" style="border-top: 2px dashed #f2f2f2;">
+
+
+            
+        </div>
+
+
+        <!-- 页码导航 -->
+<br>
+<br>
+<br>
+<div class="pagination">
+    <div class="m-auto">
+        <span class="step-links">
+            <!-- 如果不是第一页，则显示上翻按钮 -->
+            
+
+            <!-- 当前页面 -->
+            <span class="font-paginator" style="font-size: x-large">
+                1
+            </span>
+
+            <!-- 如果不是最末页，则显示下翻按钮 -->
+            
+                <a href="?page=2"
+                   class="font-paginator"
+                >
+                    2
+                </a>
+                <span>...</span>
+                <a href="?page=6"
+                   class="font-paginator"
+                >
+                    6 &raquo;
+                </a>
+            
+        </span>
+
+    <div class="text-h-center font-subheadline mb-4">Page</div>
+
+    </div>
+
+</div>
+    </div>
+
+    <div id="push"></div>
+</div>
+
+
+
+<div class="container">
+    <hr style="margin: 0;">
+</div>
+<nav class="navbar navbar-light mb-0" id="nav-footer" style="background-color: white">
+    <div class="row col justify-content-center">
+        <h3 class="mr-3 margin-bottom-zero">
+            <a
+                    href="javascript:void(0);"
+                    class="no-underline"
+                    data-toggle="modal"
+                    data-target="#QR-footer"
+            >
+                <i class="fab fa-qq font-size-sm  color-lightgray"></i>
+            </a>
+        </h3>
+        <h3 class="mr-3 margin-bottom-zero">
+            <a href="mailto:dusaiphoto@foxmail.com" class="no-underline">
+                <i class="fas fa-envelope font-size-sm color-lightgray"></i>
+            </a>
+        </h3>
+        <h3 class="mr-3 margin-bottom-zero">
+            <a href="https://github.com/stacklens" target="_blank"
+               class="no-underline">
+                <i class="fab fa-github font-size-sm color-lightgray"></i>
+            </a>
+        </h3>
+        <h3 class="mr-3 margin-bottom-zero">
+            <a href="//weibo.com/saisaixuezhang" target="_blank"
+               class="no-underline">
+                <i class="fab fa-weibo font-size-sm color-lightgray"></i>
+            </a>
+        </h3>
+        <h3 class="mr-3 margin-bottom-zero">
+            <a href="https://www.zhihu.com/people/stacklens" target="_blank"
+               class=" no-underline">
+                <i class="fab fa-zhihu font-size-sm color-lightgray"></i>
+            </a>
+        </h3>
+        <h3 class=" margin-bottom-zero">
+            <a
+                    href="javascript:void(0);"
+                    class="no-underline"
+                    data-toggle="modal"
+                    data-target="#QR-footer"
+            >
+                <i class="fab fa-weixin font-size-sm color-lightgray"></i>
+            </a>
+        </h3>
+    </div>
+
+    <div class="row col-12 justify-content-center font-size-xs">
+        <div style="text-align: center; color: lightgrey;">
+            <p class="mb-0">CopyRight &copy; 2018 ~ 2020 Dusai' blog</p>
+            <p class="mb-0">Powered by
+                <span class="mb-0">
+                    <a href="https://beian.miit.gov.cn" style="color: lightskyblue;" target="_blank">&nbsp;蜀ICP备18018263号-1</a>
+                </span>
+            </p>
+        </div>
+    </div>
+</nav>
+
+
+<!-- Modal -->
+<div class="modal fade" id="QR-footer" tabindex="-1" role="dialog"
+     aria-labelledby="QRTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <img src="../static/picture/qr.jpg"
+                     style="max-width: 100%"
+                     alt="img"
+                >
+                <div style="text-align: center">
+                                    <a
+                        href="/social/"
+                        class="sub-link"
+                        style="text-align: center; font-size: 14px; padding-right: 10px;"
+                        target="_blank"
+                >更多社交网络二维码戳这里
+                </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="../static/js/layer.js"></script>
+<script src="../static/js/mo.min.js"></script>
+<script src="../static/js/anime.min.js"></script>
+
+    <script>
+
+        let app_article_list = new Vue({
+            el: '#app_article_list',
+            data: {
+                isWindowSmall: document.body.clientWidth < 580,
+                windowSizeSplitConst: 580,
+                smallDeviceFontSize: 16,
+                largeDeviceFontSize: 18
+            },
+
+
+            computed: {
+                fontSize: function () {
+                    return this.isWindowSmall ? this.smallDeviceFontSize : this.largeDeviceFontSize;
+                },
+                visibility: function () {
+                    return this.isWindowSmall ? 'visible' : 'hidden'
+                }
+            },
+
+            created() {
+                window.addEventListener("resize", this.resizeEventHandler);
+            },
+
+            destroyed() {
+                window.removeEventListener("resize", this.resizeEventHandler);
+            },
+
+            methods: {
+                resizeEventHandler(e) {
+                    this.isWindowSmall = document.body.clientWidth < this.windowSizeSplitConst
+                }
+            }
+        })
+    </script>
+
+
+
+<link href="../static/css/825ccf64c84c4152a50d79f751374ba2.css"
+      rel="stylesheet">
+<link href="../static/css/85b0ddddcf2b41d2bc3d153ca7d423a5.css"
+      rel="stylesheet">
+</body>
+</html>
