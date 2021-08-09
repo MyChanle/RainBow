@@ -10,3 +10,8 @@ db.sqlite3
 
 # for http test
 sample.http
+
+# for media
+rainbow/media/avatar
+
+.vscode
