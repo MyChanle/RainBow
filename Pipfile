@@ -10,6 +10,7 @@ markdown = "==3.3.3"
 django-filter = "==2.4.0"
 pygments = "*"
 pillow = "*"
+djangorestframework-simplejwt = "*"
 
 [dev-packages]
 
